@@ -1,0 +1,168 @@
+/* ============================================================================
+
+  COLOR
+
+  ============================================================================ */
+
+/* ----------------------------------------------------------------------------
+Colors
+---------------------------------------------------------------------------- */
+
+:root {
+    /* Primary Color Base */
+    --C_PRIMARY_HS: 324deg 100%;
+    --C_PRIMARY_L: 33%;
+
+    /* Secondary Color Base */
+    --C_SECONDARY_HS: 25deg 100%;
+    --C_SECONDARY_L: 50%;
+
+    /* Tertiary Color Base */
+    --C_TERTIARY_HS: 187deg 100%;
+    --C_TERTIARY_L: 26%;
+
+    /* Neutral Color Base */
+    --C_NEUTRAL_HS: 0deg 0%;
+    --C_NEUTRAL_L: 60%;
+
+    /* System Color Base */
+    --C_ERROR_HS: 359deg 100%;
+    --C_ERROR_L: 66%;
+    --C_WARNING_HS: 62deg 100%;
+    --C_WARNING_L: 75%;
+    --C_INFO_HS: 229deg 100%;
+    --C_INFO_L: 78%;
+    --C_SUCCESS_HS: 176deg 56%;
+    --C_SUCCESS_L: 55%;
+
+    /* State Variables */
+    --C_ADD_HOVER: 10%;
+    --C_ADD_ACTIVE: -15%;
+    --C_ADD_TEXTCONTRAST: -25%;
+
+    /* Brand Colors */
+    --C_PRIMARY: #3A60BD;
+    --C_PRIMARY_HOVER: #273F7D;
+    --C_SECONDARY: #EFF2FA;
+    --C_SECONDARY_HOVER: #3A60BD16;
+    --C_GROKA_GREEN: #84BC27;
+    --C_GROKA_GREEN_DARK: #6E9C20;
+    --C_GROKA_YELLOW: #F8C400;
+    --C_GROKA_YELLOW_DARK: #DEAE00;
+    --C_GROKA_YELLOW_LIGHT: #FEF9E5;
+
+    /* Neutral Colors */
+    --C_WHITE: #fff;
+    --C_BLACK: #000;
+    --C_BLACK_BG: rgba(0, 0, 0, 0.2);
+    --C_BLACK_BG_2: rgba(0, 0, 0, 0.4);
+    --C_GRAY_1: #F7F7F7;
+    --C_GRAY_2: #DFDFDF;
+    --C_GRAY_3: #C3C3C3;
+    --C_GRAY_4: #A7A7A7;
+    --C_GRAY_5: #707070;
+    --C_GRAY_6: #495057;
+    --C_GRAY_7: #333333;
+
+    /* State Colors */
+    --C_RED: #D4140D;
+    --C_RED_LIGHT: #F6D0CF;
+    --C_RED_DARK: #AA100A;
+    --C_RED_DISABLED: #d4140d0a;
+    --C_ORANGE: #F78F05;
+    --C_ORANGE_LIGHT: #FDE9CD;
+    --C_ORANGE_DARK: #C67204;
+    --C_GREEN: #8BC92A;
+    --C_GREEN_LIGHT: #E8F4D4;
+    --C_GREEN_DARK: #6FA122;
+    --C_BLUE: #6993FF;
+    --C_BLUE_LIGHT: #E1E9FF;
+    --C_BLUE_DARK: #5476CC;
+    --C_YELLOW: #F8C400;
+    --C_YELLOW_LIGHT: #FEF3CC;
+    --C_YELLOW_DARK: #C69D00;
+    --C_BOILING_SOLID: #84FF36;
+    --C_BOILING_SOLID_FADED: rgba(132, 255, 54, 0.28);
+    --C_FLOURY_BOILING: #1D6BE4;
+    --C_FLOURY_BOILING_FADED: rgba(29, 107, 228, 0.28);
+    --C_MAINLY_BOILING_SOLID: #D84242;
+    --C_MAINLY_BOILING_SOLID_FADED: rgba(216, 66, 66, 0.28);
+    --C_ONION: #C3C3C3;
+    --C_ONION_FADED: rgba(195, 195, 195, 0.28);
+    --C_GATE1: #FF6BF1;
+    --C_GATE1_FADED: rgba(255, 107, 241, 0.28);
+    --C_GATE2: rgba(54, 255, 219, 1);
+    --C_GATE2_FADED: rgba(54, 255, 219, 0.28);
+    --C_GATE3: rgba(255, 247, 54, 1);
+    --C_GATE3_FADED: rgba(255, 247, 54, 0.28);
+    --C_GATE4: rgba(130, 54, 255, 1);
+    --C_GATE4_FADED: rgba(130, 54, 255, 0.28);
+}
+
+/* ----------------------------------------------------------------------------
+Utility Classes
+---------------------------------------------------------------------------- */
+
+.boiling-solid {
+    background-color: var(--C_BOILING_SOLID);
+}
+
+.boiling-solid-faded {
+    background-color: var(--C_BOILING_SOLID_FADED);
+}
+
+.floury-boiling {
+    background-color: var(--C_FLOURY_BOILING);
+}
+
+.floury-boiling-faded {
+    background-color: var(--C_FLOURY_BOILING_FADED);
+}
+
+.mainly-boiling-solid {
+    background-color: var(--C_MAINLY_BOILING_SOLID);
+}
+
+.mainly-boiling-solid-faded {
+    background-color: var(--C_MAINLY_BOILING_SOLID_FADED);
+}
+
+.onion {
+    background-color: var(--C_ONION);
+}
+
+.onion-faded {
+    background-color: var(--C_ONION_FADED);
+}
+
+.gate1 {
+    background-color: var(--C_GATE1);
+}
+
+.gate1-faded {
+    background-color: var(--C_GATE1_FADED);
+}
+
+.gate2 {
+    background-color: var(--C_GATE2);
+}
+
+.gate2-faded {
+    background-color: var(--C_GATE2_FADED);
+}
+
+.gate3 {
+    background-color: var(--C_GATE3);
+}
+
+.gate3-faded {
+    background-color: var(--C_GATE3_FADED);
+}
+
+.gate4 {
+    background-color: var(--C_GATE4);
+}
+
+.gate4-faded {
+    background-color: var(--C_GATE4_FADED);
+}
