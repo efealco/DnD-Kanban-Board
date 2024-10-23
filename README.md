@@ -1,6 +1,6 @@
 # Kanban Board
 
-![Kanban Board Screenshot](link-to-your-screenshot.png)
+![image](https://github.com/user-attachments/assets/8341235c-f7c1-4709-ad75-cfaa35808758)
 
 A simple yet powerful Kanban Board application built with React and TypeScript. This project showcases efficient state management and provides a clean and intuitive user interface for managing tasks effectively.
 
