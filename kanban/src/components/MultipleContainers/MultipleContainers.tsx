@@ -142,7 +142,6 @@ interface Props {
 
 export const TRASH_ID = 'void';
 const PLACEHOLDER_ID = 'placeholder';
-const empty: UniqueIdentifier[] = [];
 
 export function MultipleContainers({
                                        adjustScale = false,
@@ -565,24 +564,6 @@ export function MultipleContainers({
                 ))}
             </Container>
         );
-    }
-
-    function handleRemove(containerID: UniqueIdentifier) {
-        setContainers((containers) =>
-            containers.filter((id) => id !== containerID)
-        );
-    }
-
-    function handleAddColumn() {
-        const newContainerId = getNextContainerId();
-
-        unstable_batchedUpdates(() => {
-            setContainers((containers) => [...containers, newContainerId]);
-            setItems((items) => ({
-                ...items,
-                [newContainerId]: [],
-            }));
-        });
     }
 
     function getNextContainerId() {
