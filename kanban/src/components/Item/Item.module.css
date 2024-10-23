@@ -1,8 +1,8 @@
 :root {
     --font-weight: 400;
     --background-color: #fff;
-    --border-color: #efefef;
-    --text-color: #333;
+    --border-color: #3c3c3c;
+    --text-color: #3c3c3c;
     --handle-color: rgba(0, 0, 0, 0.25);
     --box-shadow-border: 0 0 0 calc(1px) rgba(63, 63, 68, 0.05);
     --box-shadow-common: 0 1px calc(3px) 0 rgba(34, 33, 81, 0.15);
@@ -50,6 +50,7 @@
 }
 
 .Item {
+    min-height: 80px;
     position: relative;
     display: flex;
     flex-grow: 1;
@@ -82,6 +83,9 @@
     }
 
     &.dragging:not(.dragOverlay) {
+        background-color: #E5FCFF;
+        color: #E5FCFF;
+        border: #38618C dashed 2px;
         opacity: 0.5;
         z-index: 0;
 
@@ -120,7 +124,7 @@
         display: block;
         border-top-left-radius: 3px;
         border-bottom-left-radius: 3px;
-        background-color: #1eb99d;
+        background-color: #fff;
     }
 
     &:hover {

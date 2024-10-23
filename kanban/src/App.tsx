@@ -58,7 +58,7 @@ function App() {
     return (
         <div className="App">
             <Box sx={{ flexGrow: 1 }}>
-                <AppBar position="fixed">
+                <AppBar position="fixed" sx={{ backgroundColor: '#fff', color: '#38618C', fontWeight: 'bold'}} >
                     <Toolbar>
                         <IconButton edge="start" color="inherit" onClick={() => toggleDrawer(true)} aria-label="menu">
                             <MenuIcon />
@@ -80,9 +80,9 @@ function App() {
                             component="div"
                             sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
                         >
-                            State Management
+                            Kanban Board
                         </Typography>
-                        <Search>
+                        <Search sx={{ border: '1px solid #e3e3e3' }}>
                             <SearchIconWrapper>
                                 <SearchIcon />
                             </SearchIconWrapper>
@@ -94,8 +94,18 @@ function App() {
                     </Toolbar>
                 </AppBar>
             </Box>
-            <Box sx={{ mt: 8 }}> {/* Add margin top to main content */}
-                <MultipleContainers handle />
+            <Box
+                sx={{
+                    mt: 8,
+                    backgroundColor: '#fff',
+                    position: 'relative',
+                    overflowX: 'auto',
+                    overflowY: 'hidden', // Prevent vertical scrolling here
+                    scrollBehavior: 'smooth',
+                    width: '100%',
+                }}
+            >
+                <MultipleContainers scrollable={true} trashable/>
             </Box>
         </div>
     );

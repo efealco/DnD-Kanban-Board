@@ -8,6 +8,7 @@ import styles from './Container.module.css';
 export interface Props {
     children: React.ReactNode;
     columns?: number;
+    childrenCount?: string;
     label?: string;
     style?: React.CSSProperties;
     horizontal?: boolean;
@@ -32,6 +33,7 @@ export const Container = forwardRef<HTMLDivElement, Props>(
             onClick,
             onRemove,
             label,
+            childrenCount,
             placeholder,
             style,
             scrollable,
@@ -66,8 +68,11 @@ export const Container = forwardRef<HTMLDivElement, Props>(
                 {label ? (
                     <div className={styles.Header}>
                         {label}
+                        {childrenCount && (
+                            <span className={styles.ChildrenCount}>({childrenCount})</span>
+                        )}
                         <div className={styles.Actions}>
-                            {onRemove ? <Remove onClick={onRemove} /> : undefined}
+                        {onRemove ? <Remove onClick={onRemove} /> : undefined}
                             <Handle {...handleProps} />
                         </div>
                     </div>

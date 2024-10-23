@@ -146,7 +146,7 @@ const empty: UniqueIdentifier[] = [];
 
 export function MultipleContainers({
                                        adjustScale = false,
-                                       itemCount = 3,
+                                       itemCount = 20,
                                        cancelDrop,
                                        columns,
                                        handle = false,
@@ -444,11 +444,11 @@ export function MultipleContainers({
             <div
                 style={{
                     display: 'flex',
-                    flexWrap: 'wrap',
-                    justifyContent: 'center',
+                    flexDirection: 'row',
+                    justifyContent: 'space-between',
                     alignItems: 'center',
                     boxSizing: 'border-box',
-                    padding: 20,
+                    padding: '20px 20px 0 20px',
                     gridAutoFlow: vertical ? 'row' : 'column',
                 }}
             >
@@ -468,6 +468,7 @@ export function MultipleContainers({
                             columns={columns}
                             items={items[containerId]}
                             scrollable={scrollable}
+                            childrenCount={items[containerId].length === 0 ? '' : items[containerId].length.toString()}
                             style={containerStyle}
                             unstyled={minimal}
                             onRemove={() => handleRemove(containerId)}
@@ -551,6 +552,7 @@ export function MultipleContainers({
                 style={{
                     height: '100%',
                 }}
+                childrenCount={items[containerId].length === 0 ? '' : items[containerId].length.toString()}
                 shadow
                 unstyled={false}
             >

@@ -7,13 +7,15 @@
     appearance: none;
     outline: none;
     min-width: 350px;
-    margin: 10px;
+    margin: 10px 10px 0 10px;
     border-radius: 5px;
     min-height: 200px;
+    height:60rem;
     transition: background-color 350ms ease;
-    background-color: rgba(246, 246, 246, 1);
+    background-color: #F7F7F7;
     border: 1px solid rgba(0, 0, 0, 0.05);
     font-size: 1em;
+    user-select: none;
 
     ul {
         display: grid;
@@ -37,10 +39,10 @@
         color: rgba(0, 0, 0, 0.5);
         background-color: transparent;
         border-style: dashed;
-        border-color: rgba(0, 0, 0, 0.08);
+        border-color: rgba(0, 0, 0, 0.15);
 
         &:hover {
-            border-color: rgba(0, 0, 0, 0.15);
+            border-color: rgba(0, 0, 0, 0.25);
         }
     }
 
@@ -77,10 +79,12 @@
     padding: 5px 8px 5px 20px;
     align-items: center;
     justify-content: space-between;
-    background-color: #fff;
+    background-color: #F7F7F7;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    color: #3c3c3c;
+    font-weight: bold;
+    font-size: 1.2em;
 
     &:hover {
         .Actions > * {
@@ -93,10 +97,18 @@
     display: flex;
 
     > *:first-child:not(:last-child) {
-        opacity: 0;
+        opacity: 1;
 
         &:focus-visible {
             opacity: 1;
         }
     }
+}
+
+.ChildrenCount {
+    display: flex;
+    margin-left: 5px;
+    margin-right: auto;
+    font-weight: lighter;
+    font-size: small;
 }
