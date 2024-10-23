@@ -1,48 +1,51 @@
-# Kanban Board
+Kanban Board
 
-![Kanban Board Screenshot](link-to-your-screenshot.png)
+![image](https://github.com/user-attachments/assets/8341235c-f7c1-4709-ad75-cfaa35808758)
 
 A simple yet powerful Kanban Board application built with React and TypeScript. This project showcases efficient state management and provides a clean and intuitive user interface for managing tasks effectively.
 
-## Table of Contents
+Table of Contents
 
-- [Features](#features)
-- [Technologies Used](#technologies-used)
-- [Getting Started](#getting-started)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
-- [Contact](#contact)
+	•	Features
+	•	Technologies Used
+	•	Getting Started
+	•	Usage
+	•	Contributing
+	•	License
+	•	Contact
 
-## Features
+Features
 
-- **Drag and Drop**: Easily move tasks between different columns.
-- **Responsive Design**: Works seamlessly on both desktop and mobile devices.
-- **Real-time Updates**: Changes are reflected in real time for a smooth user experience.
-- **Customizable Themes**: Switch between light and dark modes for a personalized look.
-- **Persistent Storage**: Store your tasks using local storage.
+	•	Drag and Drop: Easily move tasks between different columns.
+	•	Responsive Design: Works seamlessly on both desktop and mobile devices.
+	•	Real-time Updates: Changes are reflected in real time for a smooth user experience.
+	•	Customizable Themes: Switch between light and dark modes for a personalized look.
+	•	Persistent Storage: Store your tasks using local storage.
 
-## Technologies Used
+Technologies Used
 
-- **React**: For building the user interface.
-- **TypeScript**: For type safety and improved developer experience.
-- **PostCSS**: For processing CSS with future syntax and features.
-- **Classnames**: For conditionally applying CSS classes.
-- **React DnD**: For implementing drag-and-drop functionality.
+	•	React: For building the user interface.
+	•	TypeScript: For type safety and improved developer experience.
+	•	PostCSS: For processing CSS with future syntax and features.
+	•	Classnames: For conditionally applying CSS classes.
+	•	React Router: For handling navigation.
+	•	MUI (Material UI): For creating responsive layouts and UI components.
+	•	DndKit: For implementing drag-and-drop functionality with @dnd-kit/core and @dnd-kit/sortable.
+	•	Emotion: For CSS-in-JS styling with @emotion/react and @emotion/styled.
 
-## Getting Started
+Getting Started
 
-### Prerequisites
+Prerequisites
 
-- Node.js (v14 or later)
-- npm or yarn
+	•	Node.js (v14 or later)
+	•	npm or yarn
 
-### Installation
+Installation
 
-1. Clone the repository:
+	1.	Clone the repository:
 
-   ```bash
-   git clone https://github.com/yourusername/kanban-board.git
+git clone https://github.com/efealco/DnD-Kanban-Board.git
+
 
 	2.	Navigate to the project directory:
 
@@ -91,13 +94,3 @@ For questions, feel free to reach out:
 
 	•	Your Name: alcoefe@gmail.com
 	•	GitHub: efealco
-
-Thank you for checking out my Kanban Board project!
-
-### How to Customize:
-- Replace `link-to-your-screenshot.png` with the actual link to your Kanban Board screenshot.
-- Update the GitHub repository URL in the `git clone` command.
-- Add any additional features or sections specific to your project.
-- Make sure to replace the placeholders with your actual name and email.
-
-Feel free to tweak the content and style to match your personal branding! Let me know if you need further help or adjustments!
