@@ -166,10 +166,10 @@ export function MultipleContainers({
     const [items, setItems] = useState<Items>(
         () =>
             initialItems ?? {
-                A: createRange(itemCount, (index) => `A${index + 1}`),
-                B: createRange(itemCount, (index) => `B${index + 1}`),
-                C: createRange(itemCount, (index) => `C${index + 1}`),
-                D: createRange(itemCount, (index) => `D${index + 1}`),
+                TODO: createRange(itemCount, (index) => `A${index + 1}`),
+                InProgress: createRange(itemCount, (index) => `B${index + 1}`),
+                InReview: createRange(itemCount, (index) => `C${index + 1}`),
+                Done: createRange(itemCount, (index) => `D${index + 1}`),
             }
     );
     const [containers, setContainers] = useState(
@@ -464,14 +464,13 @@ export function MultipleContainers({
                         <DroppableContainer
                             key={containerId}
                             id={containerId}
-                            label={minimal ? undefined : `Column ${containerId}`}
+                            label={minimal ? undefined : `${containerId}`}
                             columns={columns}
                             items={items[containerId]}
                             scrollable={scrollable}
                             childrenCount={items[containerId].length === 0 ? '' : items[containerId].length.toString()}
                             style={containerStyle}
                             unstyled={minimal}
-                            onRemove={() => handleRemove(containerId)}
                         >
                             <SortableContext items={items[containerId]} strategy={strategy}>
                                 {items[containerId].map((value, index) => {
@@ -493,17 +492,6 @@ export function MultipleContainers({
                             </SortableContext>
                         </DroppableContainer>
                     ))}
-                    {minimal ? undefined : (
-                        <DroppableContainer
-                            id={PLACEHOLDER_ID}
-                            disabled={isSortingContainer}
-                            items={empty}
-                            onClick={handleAddColumn}
-                            placeholder
-                        >
-                            + Add column
-                        </DroppableContainer>
-                    )}
                 </SortableContext>
             </div>
             {createPortal(
@@ -547,7 +535,7 @@ export function MultipleContainers({
     function renderContainerDragOverlay(containerId: UniqueIdentifier) {
         return (
             <Container
-                label={`Column ${containerId}`}
+                label={`${containerId}`}
                 columns={columns}
                 style={{
                     height: '100%',

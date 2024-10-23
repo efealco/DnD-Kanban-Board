@@ -1,16 +1,25 @@
 import './App.css';
-import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
-import { alpha, AppBar, Box, Drawer, IconButton, InputBase, styled, Toolbar, Typography } from "@mui/material";
-import React, { useState } from "react";
+import {
+    alpha,
+    AppBar,
+    Box,
+    Button, CssBaseline,
+    Divider,
+    Drawer,
+    InputBase, List, ListItem, ListItemButton, ListItemIcon, ListItemText,
+    styled,
+    Toolbar,
+    Typography
+} from "@mui/material";
+import React from "react";
 import { MultipleContainers } from "./components/MultipleContainers/MultipleContainers";
+import {ColorTabs} from "./components";
+import InboxIcon from '@mui/icons-material/MoveToInbox';
+import MailIcon from '@mui/icons-material/Mail';
 
 function App() {
-    const [open, setOpen] = useState(false);
-
-    const toggleDrawer = (open: boolean) => {
-        setOpen(open);
-    };
+    const drawerWidth = 240;
 
     const Search = styled('div')(({ theme }) => ({
         position: 'relative',
@@ -53,61 +62,74 @@ function App() {
         },
     }));
 
-    const DrawerList = ['Item 1', 'Item 2', 'Item 3'];
-
     return (
-        <div className="App">
-            <Box sx={{ flexGrow: 1 }}>
-                <AppBar position="fixed" sx={{ backgroundColor: '#fff', color: '#38618C', fontWeight: 'bold'}} >
-                    <Toolbar>
-                        <IconButton edge="start" color="inherit" onClick={() => toggleDrawer(true)} aria-label="menu">
-                            <MenuIcon />
-                        </IconButton>
-                        <Drawer anchor="left" open={open} onClose={() => toggleDrawer(false)}>
-                            <div
-                                role="presentation"
-                                onClick={() => toggleDrawer(false)}
-                                onKeyDown={() => toggleDrawer(false)}
-                            >
-                                {DrawerList.map((text, index) => (
-                                    <div key={index} style={{ padding: '10px' }}>{text}</div>
-                                ))}
-                            </div>
-                        </Drawer>
-                        <Typography
-                            variant="h6"
-                            noWrap
-                            component="div"
-                            sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
-                        >
-                            Kanban Board
-                        </Typography>
-                        <Search sx={{ border: '1px solid #e3e3e3' }}>
-                            <SearchIconWrapper>
-                                <SearchIcon />
-                            </SearchIconWrapper>
-                            <StyledInputBase
-                                placeholder="Search…"
-                                inputProps={{ 'aria-label': 'search' }}
-                            />
-                        </Search>
-                    </Toolbar>
-                </AppBar>
-            </Box>
-            <Box
+        <Box sx={{ display: 'flex' }}>
+            <CssBaseline />
+            <AppBar position="fixed" sx={{ zIndex: (theme) => theme.zIndex.drawer + 1, backgroundColor: '#fff', color: '#38618C', }}>
+                <Toolbar>
+                    <Typography
+                        variant="h1"
+                        noWrap
+                        component="div"
+                        sx={{ flexGrow: 1, marginRight: 'auto', fontWeight: 600, fontSize: 24, display: { xs: 'none', sm: 'block' } }}
+                    >
+                        Kanban Board
+                    </Typography>
+                    <Search sx={{ border: '1px solid #e3e3e3', marginRight: '20px'}}>
+                        <SearchIconWrapper>
+                            <SearchIcon />
+                        </SearchIconWrapper>
+                        <StyledInputBase
+                            placeholder="Search…"
+                            inputProps={{ 'aria-label': 'search' }}
+                        />
+                    </Search>
+                    <Button variant="contained">Create</Button>
+                </Toolbar>
+            </AppBar>
+            <Drawer
+                variant="permanent"
                 sx={{
-                    mt: 8,
-                    backgroundColor: '#fff',
-                    position: 'relative',
-                    overflowX: 'auto',
-                    overflowY: 'hidden', // Prevent vertical scrolling here
-                    scrollBehavior: 'smooth',
-                    width: '100%',
+                    width: drawerWidth,
+                    flexShrink: 0,
+                    [`& .MuiDrawer-paper`]: { width: drawerWidth, boxSizing: 'border-box' },
                 }}
             >
-                <MultipleContainers scrollable={true} trashable/>
+                <Toolbar />
+                <Box sx={{ overflow: 'auto' }}>
+                    <List>
+                        {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
+                            <ListItem key={text} disablePadding>
+                                <ListItemButton>
+                                    <ListItemIcon>
+                                        {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                                    </ListItemIcon>
+                                    <ListItemText primary={text} />
+                                </ListItemButton>
+                            </ListItem>
+                        ))}
+                    </List>
+                    <Divider />
+                    <List>
+                        {['All mail', 'Trash', 'Spam'].map((text, index) => (
+                            <ListItem key={text} disablePadding>
+                                <ListItemButton>
+                                    <ListItemIcon>
+                                        {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                                    </ListItemIcon>
+                                    <ListItemText primary={text} />
+                                </ListItemButton>
+                            </ListItem>
+                        ))}
+                    </List>
+                </Box>
+            </Drawer>
+            <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+                <Toolbar />
+                <ColorTabs />
+                <MultipleContainers scrollable={true}/>
             </Box>
-        </div>
+        </Box>
     );
 }
 

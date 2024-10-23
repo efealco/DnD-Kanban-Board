@@ -1,0 +1,1 @@
+export {ColorTabs} from './ColoredTabs';
