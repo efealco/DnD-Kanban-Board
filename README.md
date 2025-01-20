@@ -1,6 +1,6 @@
 Kanban Board
 
-![image](https://github.com/user-attachments/assets/72ad92c2-8ce4-4271-a157-3d5cae3da174)
+![Screenshot](https://raw.githubusercontent.com/efealco/DnD-Kanban-Board/main/public/kanban-board.png)
 
 
 A simple yet powerful Kanban Board application built with React and TypeScript. This project showcases efficient state management and provides a clean and intuitive user interface for managing tasks effectively.
